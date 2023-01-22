@@ -71,15 +71,11 @@ void addLocationNote() {
     float lat = JGetNumber(res, "lat");
     float lon = JGetNumber(res, "lon");
     if (strstr(status, "GPS updated")) {
-        Serial.println(status);
-        Serial.println(lat);
-        Serial.println(lon);
         J *note = JCreateObject();
         JAddNumberToObject(note, "lat", lat);
         JAddNumberToObject(note, "lon", lon);
-        //JAddNumberToObject(req, "time", );
 
-        //NoteAdd(NOTEHUB_LOCATION_FILE, note, false);
+        NoteAdd(NOTEHUB_LOCATION_FILE, note, false);
     }
 }
 
